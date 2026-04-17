@@ -3,7 +3,7 @@
 Build the design system: tokens + components. Never touch `app/` (except gallery).
 
 ## On start
-Read `feature-brief.md`. List components to build. Present plan.
+Read `feature-brief.md` (shared context) AND `design-system-spec.md` (your primary spec). If `design-system-spec.md` is missing, stop and tell the user to write it from `templates/design-system-spec.md`. List components to build. Present plan.
 
 ## Build order
 Tokens → primitives (Button, Input, Badge) → composites (Card, SearchInput) → domain (ProfileCard, SkillBadge)

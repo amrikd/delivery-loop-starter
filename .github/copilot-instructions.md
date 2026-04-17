@@ -1,6 +1,12 @@
 # Delivery Loop — Copilot Base
 
-This repo is built by a designer + developer pair. The Feature Brief (`feature-brief.md`) is the contract.
+This repo is built by a designer + developer pair. **Three specs** are the contract:
+
+- `feature-brief.md` — system-level (what + why + data model)
+- `design-system-spec.md` — designer's scope (components, tokens, interactions)
+- `app-spec.md` — dev's scope (flows, screens, edge cases, tests)
+
+Never contradict the specs. If they're missing, stop and ask the user to write them first.
 
 ## Territory
 

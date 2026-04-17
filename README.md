@@ -9,22 +9,24 @@ npm run dev        # localhost:3000 — app
 
 ## Read First
 
-- **`WRITING-SPECS.md`** — the core lesson of the workshop. Spec is king. Read this first.
-- **`DESIGN-WITH-CLAUDE.md`** — designer's playbook. How to actually design with Claude, not just code.
-- **`examples/feature-brief-example.md`** — a worked example. That's the bar.
+- **`WRITING-SPECS.md`** — the core lesson. How the 3-tier spec model works.
+- **`DESIGN-WITH-CLAUDE.md`** — designer's playbook for Figma MCP.
+- **`examples/`** — worked Team Profile Builder example across all three specs.
 
 ## How This Works
 
-1. **Spec It** — Fill out `templates/feature-brief.md` together. This is the phase that matters most.
-2. **Check It** — Run the brief-checker (PASS/FAIL gate). No build without PASS.
+1. **Spec It** — Write three spec files together (feature-brief, design-system-spec, app-spec). This is the phase that matters most.
+2. **Check It** — Run the brief-checker — validates all three and cross-spec consistency. PASS/FAIL.
 3. **Build It** — Designer builds design system (tokens + components + Figma library). Developer builds app + Playwright tests. Parallel.
 4. **Ship It** — Integrate, run the scorer, demo.
 
-## Three deliverables
+## Three specs, three deliverables
 
-1. A **spec** that passes review (the skill)
-2. A **working design system** (designer)
-3. A **working app with Playwright tests** (developer)
+| Spec | Owner | Builds |
+|---|---|---|
+| `feature-brief.md` | Both (written together) | Shared context |
+| `design-system-spec.md` | Designer | Design system (tokens + components + Figma) |
+| `app-spec.md` | Developer | App + Playwright tests |
 
 ## Tools: Claude Code OR GitHub Copilot
 

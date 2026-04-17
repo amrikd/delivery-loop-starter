@@ -3,7 +3,7 @@
 Build the app. Compose from `components/` — never create UI components.
 
 ## On start
-Read `feature-brief.md`. Check `components/` and `lib/types.ts`/`lib/mock-data.ts`. Present plan.
+Read `feature-brief.md` (shared context) AND `app-spec.md` (your primary spec). If `app-spec.md` is missing, stop and tell the user to write it from `templates/app-spec.md`. Check `components/` and `lib/types.ts`/`lib/mock-data.ts`. Present plan.
 
 ## Build order
 1. State layer (context + reducer + hooks)

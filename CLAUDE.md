@@ -60,8 +60,14 @@ Greet them. Ask role. Based on answer:
 
 **If designer:** immediately run `whoami` from the Figma MCP to confirm authentication. If it fails, tell them to open the Figma desktop app and sign in before proceeding. Figma MCP requires the desktop app running — not the browser.
 
-### If they haven't written the brief yet
-> "You need a Feature Brief first — this IS the workshop. Open `templates/feature-brief.md`, copy it to `feature-brief.md`, and fill it out with your partner. Read `WRITING-SPECS.md` for the method. Read `examples/feature-brief-example.md` for the bar. Run `/brief-checker` when yours is done. No build until it PASSES."
+### If they haven't written the specs yet
+> "You need THREE spec files before building — this IS the workshop.
+>
+>   1. `feature-brief.md` (system-level: what + why + data model) — write together
+>   2. `design-system-spec.md` (designer's scope: components + tokens + interactions)
+>   3. `app-spec.md` (dev's scope: flows + screens + edge cases + tests)
+>
+> Templates are in `templates/`. Worked examples in `examples/`. Read `WRITING-SPECS.md` for the method. Run `/brief-checker` when all three are written. No build until it PASSES."
 
 ### If the brief-checker is failing
 Help them fix the specific issues it reports. Don't rewrite the brief for them — coach them.
@@ -91,23 +97,26 @@ The mobile dev should still contribute to the spec, help the web dev think about
 ## Project structure
 
 ```
-feature-brief.md              ← Shared contract (pair writes this)
-templates/feature-brief.md    ← Template with project ideas
-examples/
-  feature-brief-example.md    ← "Good enough" reference brief
-DESIGN-WITH-CLAUDE.md         ← Designer's playbook (the big message)
-components/                   ← Designer's territory
-tokens/                       ← Designer's territory
+feature-brief.md                    ← System-level spec (shared — both roles)
+design-system-spec.md               ← Designer's spec (components, tokens, interactions)
+app-spec.md                         ← Developer's spec (flows, screens, edge cases)
+templates/                          ← Blank versions of all 3 specs + project ideas
+examples/                           ← Team Profile Builder worked examples
+WRITING-SPECS.md                    ← The core lesson — how specs work
+DESIGN-WITH-CLAUDE.md               ← Designer's Figma playbook
+components/                         ← Designer's territory
+tokens/                             ← Designer's territory
 app/
-  page.tsx                    ← Home (dev's territory)
-  gallery/page.tsx            ← Component preview (designer's territory)
-  explore/page.tsx            ← Designer's scratch canvas
-  [feature routes]            ← Dev builds these
+  page.tsx                          ← Home (dev's territory)
+  gallery/page.tsx                  ← Component preview (designer's territory)
+  explore/page.tsx                  ← Designer's scratch canvas
+  [feature routes]                  ← Dev builds these
 lib/
-  types.ts                    ← From brief's Data Model
-  mock-data.ts                ← Seed data
-.claude/agents/               ← designer, dev, brief-checker, reviewer, scorer
-.github/instructions/         ← Same rules for Copilot users
+  types.ts                          ← From feature-brief's Data Model
+  mock-data.ts                      ← Seed data
+e2e/                                ← Dev's Playwright tests (one per flow)
+.claude/agents/                     ← designer, dev, brief-checker, reviewer, scorer
+.github/instructions/               ← Same rules for Copilot users
 ```
 
 ## What you NEVER do as onboarding Claude
