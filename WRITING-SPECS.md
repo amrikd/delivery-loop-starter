@@ -44,7 +44,7 @@ feature-brief.md           ← system-level: WHAT and WHY (shared by both roles)
 3. **Role clarity.** Each role owns one child spec end-to-end. No one wonders "whose job is this?"
 4. **Quality.** A dedicated design system spec raises the bar for what a design system should do. A dedicated app spec forces clear flows without getting tangled in visual details.
 
-This is how BC Ferries runs specs. This is how any real AI-native team runs specs.
+This is how any real AI-native team runs specs in production.
 
 ---
 

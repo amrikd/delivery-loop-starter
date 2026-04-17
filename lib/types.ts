@@ -1,28 +1,13 @@
-export interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  bio: string;
-  avatarColor: string;
-  skills: Skill[];
-  projects: Project[];
-  availability: Availability;
-  createdAt: string;
-}
+// Your data types go here.
+//
+// Copy the interfaces from your feature-brief.md Data Model section.
+// The dev agent will auto-populate this file when it scaffolds the app.
+//
+// Example:
+//   export interface User {
+//     id: string;
+//     name: string;
+//     createdAt: string;
+//   }
 
-export interface Skill {
-  name: string;
-  proficiency: "beginner" | "intermediate" | "advanced" | "expert";
-}
-
-export interface Project {
-  name: string;
-  role: string;
-  status: "active" | "paused" | "completed";
-}
-
-export interface Availability {
-  status: "available" | "busy" | "away" | "focused";
-  hours: string;
-  timezone: string;
-}
+export {};

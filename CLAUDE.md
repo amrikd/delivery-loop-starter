@@ -27,7 +27,7 @@ Three deliverables at the end:
 2. A working design system (designer's output)
 3. A working app with Playwright tests (developer's output)
 
-All three shippable. All three real. This is the pattern at BC Ferries and in production AI-native teams.
+All three shippable. All three real. This is the pattern in production AI-native teams.
 
 ## The flow
 

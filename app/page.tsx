@@ -12,7 +12,7 @@ export default function Home() {
       <div className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-16">
 
         {/* Hero */}
-        <div className="mb-20 text-center">
+        <div className="mb-16 text-center">
           <div className="mb-8 inline-block rounded-full border border-[#2a2a35] bg-[#141419]/60 px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] text-indigo-400 backdrop-blur">
             AGENTIC LOOP · V2
           </div>
@@ -24,24 +24,10 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Two doors */}
-        <div className="mx-auto grid w-full max-w-3xl gap-4 md:grid-cols-2">
-          <Door
-            tag="DESIGN"
-            tagColor="text-pink-400"
-            accent="from-pink-500/10"
-            title="I'm the designer"
-            hint="Start here"
-            href="/gallery"
-          />
-          <Door
-            tag="DEVELOP"
-            tagColor="text-cyan-400"
-            accent="from-cyan-500/10"
-            title="I'm the developer"
-            hint="Start here"
-            href="/explore"
-          />
+        {/* Quick links — subtle, not instructive */}
+        <div className="mx-auto flex flex-wrap items-center justify-center gap-3 text-sm">
+          <Pill href="/gallery" color="pink">Component Gallery</Pill>
+          <Pill href="/explore" color="cyan">Explore</Pill>
         </div>
 
         {/* Philosophy line */}
@@ -53,36 +39,25 @@ export default function Home() {
   );
 }
 
-function Door({
-  tag,
-  tagColor,
-  accent,
-  title,
-  hint,
+function Pill({
   href,
+  color,
+  children,
 }: {
-  tag: string;
-  tagColor: string;
-  accent: string;
-  title: string;
-  hint: string;
   href: string;
+  color: "pink" | "cyan";
+  children: React.ReactNode;
 }) {
+  const hover =
+    color === "pink"
+      ? "hover:border-pink-500/40 hover:text-pink-300"
+      : "hover:border-cyan-500/40 hover:text-cyan-300";
   return (
     <Link
       href={href}
-      className="group relative overflow-hidden rounded-2xl border border-[#2a2a35] bg-[#141419] p-10 transition-all hover:border-[#3a3a48] hover:bg-[#181820]"
+      className={`rounded-full border border-[#2a2a35] bg-[#141419]/60 px-4 py-2 text-neutral-400 backdrop-blur transition-colors ${hover}`}
     >
-      <div className={`absolute inset-0 bg-gradient-to-br ${accent} to-transparent opacity-0 transition-opacity group-hover:opacity-100`} />
-      <div className="relative">
-        <div className={`mb-6 text-[11px] font-bold tracking-[0.2em] ${tagColor}`}>
-          {tag}
-        </div>
-        <div className="mb-2 text-2xl font-semibold text-white">{title}</div>
-        <div className="text-sm text-neutral-500 transition-colors group-hover:text-neutral-300">
-          {hint} →
-        </div>
-      </div>
+      {children} →
     </Link>
   );
 }
