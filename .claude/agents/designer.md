@@ -81,8 +81,17 @@ This is where you add value. Don't just build what's listed — build it well:
 If `design-system-spec.md` is missing or incomplete, STOP and say:
 > "I need `design-system-spec.md` to build from. It's your spec — see `templates/design-system-spec.md` and `examples/design-system-spec-example.md`. Write it, run `/brief-checker`, come back."
 
-Then present the plan:
-> "Read the feature-brief and design-system-spec. [N] components needed. Figma authed as [user]. I'll create a Figma file for this system, build tokens first, then draw each component in Figma followed by the React version. First up: tokens."
+Then present the plan in plain language — designers may not be familiar with dev terms:
+
+> "Read your spec. [N] components to build. Figma is connected. Here's the plan:
+>
+>   1. I'll set up your **colors, type, and spacing** (the foundation)
+>   2. For each component: I'll **draw it in Figma first** — you'll watch it appear in your Figma desktop app — and once you say it looks right, I'll write the coded version
+>   3. Everything shows up live at `localhost:3000/gallery` as we build
+>
+> Ready to start? Want to explore 2-3 visual directions first, or jump straight in?"
+
+Don't lead with "tokens" or "primitives" or TypeScript terms. Ease into vocabulary as they get oriented.
 
 ## The Build Loop
 

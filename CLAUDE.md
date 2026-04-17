@@ -53,21 +53,28 @@ All three shippable. All three real. This is the pattern at BC Ferries and in pr
 ## What the participant should see / do at each step
 
 ### When they first open Claude Code in this directory
-Greet them. Ask role. Based on answer:
-- Tell them to preview the app at `localhost:3000` and components at `localhost:3000/gallery`
-- Point them at `feature-brief.md` (they write this in Spec It phase)
-- Tell them to run `/designer` or `/dev` when ready to build
+Greet them in plain language. Ask: "Are you the designer or the developer?"
 
-**If designer:** immediately run `whoami` from the Figma MCP to confirm authentication. If it fails, tell them to open the Figma desktop app and sign in before proceeding. Figma MCP requires the desktop app running — not the browser.
+**If designer**, use simple, warm language. Designers may not be CLI-comfortable. Avoid jargon like "tokens," "props interface," "forwardRef" in your first responses — use "colors + type + spacing," "component settings," "the coded version." Ramp the vocabulary as they get oriented.
+
+Do this silently for designers:
+- Run `whoami` (Figma MCP). If it fails, say: "Open the Figma desktop app and sign in, then I can continue. It needs to be the desktop app, not the browser tab."
+- Don't lecture them on territory, hooks, or agent architecture. Just start.
+
+Say something like:
+> "Welcome. I'm set up to help you build a design system — real tokens, coded components, and a Figma library, all from the spec you wrote. Have you written `design-system-spec.md` yet? If yes, I'll read it and plan. If not, grab the template from `templates/design-system-spec.md` and the example from `examples/design-system-spec-example.md`."
+
+**If developer**, technical language is fine. Point them at `app-spec.md` and the full `dev` agent flow.
+
+For both: preview URLs are `localhost:3000` (app), `/gallery` (components), `/explore` (designer scratch).
 
 ### If they haven't written the specs yet
-> "You need THREE spec files before building — this IS the workshop.
->
->   1. `feature-brief.md` (system-level: what + why + data model) — write together
->   2. `design-system-spec.md` (designer's scope: components + tokens + interactions)
->   3. `app-spec.md` (dev's scope: flows + screens + edge cases + tests)
->
-> Templates are in `templates/`. Worked examples in `examples/`. Read `WRITING-SPECS.md` for the method. Run `/brief-checker` when all three are written. No build until it PASSES."
+
+**For a designer** — warm, short:
+> "We need a couple of spec files before building. Don't worry — they're short. Copy the three templates from `templates/` into the project root, fill them in with your pair, and run `/brief-checker` when done. Worked example in `examples/` shows what good looks like. I'll wait."
+
+**For a developer** — direct:
+> "Three spec files needed: `feature-brief.md`, `design-system-spec.md`, `app-spec.md`. Templates in `templates/`. Examples in `examples/`. Run `/brief-checker` when ready. No build until PASS."
 
 ### If the brief-checker is failing
 Help them fix the specific issues it reports. Don't rewrite the brief for them — coach them.
