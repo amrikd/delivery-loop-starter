@@ -1,10 +1,20 @@
 # Delivery Loop Starter
 
-## Setup
+## One-command setup
+
+```bash
+git clone https://github.com/amrikd/delivery-loop-starter
+cd delivery-loop-starter
+./setup.sh
 ```
-npm install
+
+`setup.sh` checks Node/Git, installs dependencies, verifies the build, and flags any missing AI tools (Claude Code, Figma desktop, VS Code). Written for designers — no CLI wrestling.
+
+Then:
+```bash
 npm run dev        # localhost:3000 — app
                    # localhost:3000/gallery — component preview
+                   # localhost:3000/explore — designer scratch canvas
 ```
 
 ## Read First
