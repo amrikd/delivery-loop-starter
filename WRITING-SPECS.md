@@ -4,7 +4,24 @@ Everything else is secondary. If you leave this workshop remembering one thing, 
 
 > **A good spec is the most leveraged document you can write in an AI-native team.**
 
-The agents are fast. Figma integration is cool. Playwright automation is valuable. But none of it matters if the spec is vague, because every agent downstream reads it and amplifies whatever was in it.
+## Why: you're graduating from prompts to agents
+
+Most engineers and designers today work **prompt-first**: ask the AI something, copy the output, ask again. The context dies with the chat. The output is disposable.
+
+That doesn't scale past one person. For a team, for a product, for production — you need **agents**. Agents run loops. Agents produce coordinated outputs across files. Agents don't forget context between steps.
+
+But agents are only as good as what you feed them. **Specs are the input format for agents.** A great spec is executable by an AI team the same way source code is executable by a CPU. The spec isn't "the doc before the code." The spec **is** the code — agents compile it into everything downstream.
+
+```
+Prompt-driven                   Agent-orchestrated
+─────────────────────           ─────────────────────
+one-off asks            ─→      specs as durable input
+single-file output      ─→      coordinated multi-file output
+you orchestrate         ─→      agents run the loop
+context dies with chat  ─→      context lives in the spec
+```
+
+The bridge is the spec. That's the skill today.
 
 **Garbage spec → garbage system. Great spec → great system, in 90 minutes.**
 
